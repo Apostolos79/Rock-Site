@@ -1,0 +1,111 @@
+{% load crispy_forms_tags %}
+
+
+<div class="container" id="mypost-info">
+
+	<div class="col-md-2" id="mypost-personal">
+
+			<h4><center><a href="{% url 'posts:for_user' username=post.user.username %}" style="color:white;">@{{ post.user.username }}</a></center></h4>
+
+			<div class="avatar">
+				 <img src="http://i.pravatar.cc/50" class="md-avatar rounded-circle" alt="" />
+			</div>
+
+			<h6 style="color:white;"><center> Posts: {{post.user.posts.count}}</center></h6>
+			{% for prof in post.user.profiles.all %}
+					<h6 style="color:white;"><center> Rep: {{prof.popularity}}</center></h6>
+			{% endfor %}
+			<h6 style="color:grey;"><center> Date joined: {{post.user.date_joined|date:"M y"}}</center></h6>
+
+	</div>
+
+
+	<div class="col-md-10" id="mypost-content">
+
+		<div class="media">
+
+			<div class="panel-collapse collapse in" id="collapseOne">
+
+				<div class="media-body" id="mypost-body">
+
+					<div class="comment-head">
+						<strong><time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">Posted: {{ post.created_at }}</a></time></strong>
+							{% if not user.is_authenticated %}
+								<a style="color:white">
+										<i data-toggle="tooltip" title="Please Login!" id="myfa-up-disable" class="fa fa-thumbs-up"> {{ post.thumbsup }} </i>
+								</a>
+								<a style="color:white">
+										<i data-toggle="tooltip" title="Please Login!" id="myfa-down-disable" class="fa fa-thumbs-down"> {{ post.thumbsdown }} </i>
+								</a>
+							{% else %}
+								{% if user not in group.members.all %}
+									<a style="color:white">
+											<i data-toggle="tooltip" title="Please Join the Group!" id="myfa-up-disable" class="fa fa-thumbs-up"> {{ post.thumbsup }} </i>
+									</a>
+									<a style="color:white">
+											<i data-toggle="tooltip" title="Please Join the Group!" id="myfa-down-disable" class="fa fa-thumbs-down"> {{ post.thumbsdown }} </i>
+									</a>
+								{% else %}
+									{% if post.user == user %}
+										<a style="color:white">
+												<i data-toggle="tooltip" title=" You can 'like' posts only from other users!" id="myfa-up-disable" class="fa fa-thumbs-up"> {{ post.thumbsup }} </i>
+										</a>
+										<a style="color:white">
+												<i data-toggle="tooltip" title="' You can 'like' posts only from other users!" id="myfa-down-disable" class="fa fa-thumbs-down"> {{ post.thumbsdown }} </i>
+										</a>
+									{% else %}
+										<a href="{% url 'posts:thumbs_up' pk=post.pk %}" style="color:lightgrey">
+												<i id="myfa-up" class="fa fa-thumbs-up"> {{ post.thumbsup }} </i>
+										</a>
+										<a href="{% url 'posts:thumbs_down' pk=post.pk %}" style="color:lightgrey">
+												<i id="myfa-down" class="fa fa-thumbs-down"> {{ post.thumbsdown }} </i>
+										</a>
+									{% endif %}
+								{% endif %}
+							{% endif %}
+					</div>
+
+					<p>{{ post.message_html|safe }}</p>
+
+					{% if post.group and not hide_group %}
+							<h1></h1>
+							<span class="group-name"><h4><strong>Posted on: <a href="{% url 'groups:single' slug=post.group.name|slugify %}">{{ post.group.name }}</strong></h4></span>
+					{% endif %}
+
+					<div class="media-footer">
+
+						{% if user.is_authenticated and user in group.members.all %}
+							{% if post.user == user and not hide_delete %}
+								<h3></h3>
+
+								<a href="{% url 'posts:delete' pk=post.pk %}" style="color:lightgrey">
+										<i id="myfa-trash" class="fa fa-trash-o"> delete</i></a>
+
+								<a href="{% url 'posts:create' %}" aria-expanded="false" aria-controls="collapseExample" style="color:lightgrey">
+										<i class="fa fa-reply" id="myfa-reply"> reply</i></a>
+
+							{% endif %}
+
+							{% if post.user != user and not hide_delete %}
+								<h3></h3>
+
+								<a href="{% url 'posts:create' %}" aria-expanded="false" aria-controls="collapseExample" style="color:lightgrey">
+									<i class="fa fa-reply" id="myfa-reply"> reply</i></a>
+
+							{% endif %}
+
+							{% if post.user == user and hide_delete %}
+								<form method="POST">
+									{% csrf_token %}
+									<h3></h3>
+									<input type="submit" value="Confirm Delete" class="btn btn-danger btn-sm">
+									<a href="{% url 'posts:single' username=user.username pk=object.pk %}" class="btn btn-warning btn-sm">Cancel</a>
+								</form>
+							{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

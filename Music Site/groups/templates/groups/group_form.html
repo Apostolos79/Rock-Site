@@ -1,0 +1,25 @@
+{%  extends "groups/group_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block group_content %}
+
+  <div class="col-md-3" id="mywelcomepane">
+    <h3 class="text-center">Create new Group</h3>
+
+    <div class="avatar">
+  		 <img src="http://i.pravatar.cc/100" class="md-avatar rounded-circle" alt="" />
+  	</div>
+
+  </div>
+
+
+    <div class="col-md-7" id="mycreateform">
+
+      <form class="" action="{% url 'groups:create' %}" method="POST" id="groupForm">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-primary btn-large" value="Create">
+      </form>
+    </div>
+
+{% endblock %}

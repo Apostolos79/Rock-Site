@@ -1,0 +1,47 @@
+{%  extends "groups/group_base.html" %}
+
+{% block pregroup %}
+  <div class="col-md-3" id="mywelcomepane">
+    <div class="content">
+      {% if user.is_authenticated %}
+        <h2>Welcome</h2>
+        <h3><a href="{% url 'posts:for_user' username=user.username %}" style="color:#38AD21;">
+            @{{user.username}}
+          </a>
+        </h3>
+      {% endif %}
+      <h3>to the groups page!</h3>
+    </div>
+    {% if user.is_authenticated %}
+    <h1></h1>
+      <a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning">
+        <span class="fa fa-plus"> Create New Group</span>
+      </a>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block group_content %}
+  <div class="col-md-9">
+      {% for group in object_list %}
+        <a class="list-group-item" id="mylistgroupitem" href="{% url 'groups:single' slug=group.slug %}">
+          <h2 class="title list-group-item-heading" id="mylistgroupname"><center>{{group.name}}</center></h2>
+          <div class="list-group-item-text container-fluid" id="listtext">
+            <h3><center>{{group.description_html|safe}}</center></h3>
+            <h1></h1>
+            <div class="row justify-content-center">
+              <div class="col-md-2">
+                <span class="badge" id="circlevalues1">{{group.members.count}}</span>
+                member{{group.members.count|pluralize}}
+              </div>
+              <div class="col-md-2">
+                <span class="badge" id="circlevalues2">{{group.posts.count}}</span>
+                post{{group.posts.count|pluralize}}
+              </div>
+            </div>
+          </div>
+          <h3></h3>
+        </a>
+      {% endfor %}
+  </div>
+{% endblock %}

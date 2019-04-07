@@ -1,0 +1,22 @@
+{%  extends "posts/post_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block post_content %}
+
+  <div class="col-md-3" id="mywelcomepane">
+    <h3 class="text-center">Create new Post</h3>
+
+    <div class="avatar">
+  		 <img src="http://i.pravatar.cc/100" class="md-avatar rounded-circle" alt="" />
+  	</div>
+
+  </div>
+
+  <div class="col-md-7"  id="mycreateform">
+    <form action="{% url 'posts:create' %}" method="POST" id="postForm">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit" class="btn btn-primary btn-large" value="Post">
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "posts/post_base.html" %}
+
+{% block prepost %}
+<div class="container">
+		<h1>Post History</h1>
+		<h1></h1>
+</div>
+
+{% endblock %}
+
+{% block post_content %}
+
+<div class="container">
+	{% for post in post_list %}
+		{% include "posts/_post.html" %}
+	{% endfor %}
+</div>
+
+	<a href=""></a>
+
+		{% if is_paginated %}
+			<nav>
+				<ul class="pagination">
+					{% if page_obj.has_previous %}
+						<li><a href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+					{% else %}
+						<li class="disabled"><a href="#"><span>Previous</span></a></li>
+					{% endif %}
+
+					{% for page in paginator.page_range %}
+						<li {% if page == page_obj.number %}class="active"{% endif %}>
+							<a href="?page={{ page }}">{{ page }}</a>
+						</li>
+					{% endfor %}
+
+					{% if page_obj.has_next %}
+						<li>
+							<a href="?page={{ page_obj.next_page_number }}">
+								<span>Next</span>
+							</a>
+						</li>
+					{% else %}
+						<li {% if not page_obj.has_next %}class="disabled"{% endif %}>
+							<a href="#">
+								<span>Next</span>
+							</a>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		{% endif %}
+
+{% endblock %}

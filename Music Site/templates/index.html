@@ -1,0 +1,454 @@
+{%  extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="carousel slide bg-inverse w-75 ml-auto mr-auto" data-ride="carousel" id="myCarousel">
+
+
+      <ol class="carousel-indicators carousel-indicators-numbers">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">1</li>
+        <li data-target="#carousel-example-generic" data-slide-to="1">2</li>
+        <li data-target="#carousel-example-generic" data-slide-to="2">3</li>
+      </ol>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'media/img_large1.jpg' %}" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>We gonna Rock.</h3>
+              <p>Disturbed and Madrugada is here! You?</p>
+              <p><a class="btn btn-md btn-primary" role="button" onClick="document.getElementById('featurette1').scrollIntoView();">Details</a></p>
+              <h2></h2>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'media/img_large2.jpg' %}" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Rockkkkkk</h3>
+              <p>Deus live once agian. But this time with trip hop feelings...</p>
+              <p><a class="btn btn-md btn-primary" role="button" onClick="document.getElementById('featurette2').scrollIntoView();">Learn more</a></p>
+              <h2></h2>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'media/img_large3.jpg' %}" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Rock your mind!</h3>
+              <p>Evia Festival is again this summer. Nisiotissa forever! </p>
+              <p><a class="btn btn-md btn-primary" role="button" onClick="document.getElementById('featurette3').scrollIntoView();">Browse gallery</a></p>
+              <h2></h2>
+            </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+
+
+    <div class="container marketing" id="circle_info">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'media/img_small1.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Sonar Festival, Barcelona</h2>
+            <p>Sónar is the place to be for lovers of electro music...</p>
+            <p>
+              <a class="btn btn-info" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">View details »</a>
+            </p>
+
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body" id="mycard">
+                Sónar is the place to be for lovers of electro music. Created in 1994, the festival takes place over three days during the day and at night. Thousands of participants from all over Europe enjoy concerts given by some of the biggest names in electro music as well as by up-and-coming stars. A European institution and an internationally recognised event, Sónar festival goes hand in hand with the festive atmosphere that Barcelona does so well.
+              </div>
+            </div>
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-4">
+
+            <img class="rounded-circle" src="{% static 'media/img_small2.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Street Mode Festival, Thessaloniki, Greece</h2>
+            <p>Street Mode Festival is an annual music, art and sports festival held in Thessaloniki ...</p>
+            <p>
+              <a class="btn btn-info" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">View details »</a>
+            </p>
+
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body" id="mycard">
+                Street Mode Festival is an annual music, art and sports festival held in Thessaloniki since 2009. It is the largest festival in North Greece, reaching more than 40.000 visitors, in a 4-day long program involving live music gigs and street activities. All forms and modes of urban music and culture have a place in the line-up of Street Mode festival, a program that involves live music gigs, dj sets, shows and contests of graffiti, street art, breaking, street dance, parkour, freerunning, skateboarding, longboarding & more.
+              </div>
+            </div>
+
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+
+            <img class="rounded-circle" src="{% static 'media/img_small3.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Ultra Australia Melbourne, festival</h2>
+            <p>If rock and metal are your game, then Germany's Rock am Ring ...</p>
+            <p>
+              <a class="btn btn-info" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">View details »</a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body" id="mycard">
+                If rock and metal are your game, then Germany's Rock am Ring needs no introduction. Along with sister festival Rock im Park, it pulls unparalleled lineups year after year and can lay claim to being one of the best-attended weekends in the world.
+              </div>
+            </div>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+      </div>
+
+      <!-- Review of albums -->
+
+      <div class="container" id="card_album">
+        <h1><strong>Rock News</strong></h1>
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img1news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Ozzy Osbourne back to his 'normal miserable' self after pneumonia scare</strong></h5>
+              <p class="card-text" style="color:black">Ozzy Osbourne is back to his “complaining” and “miserable” self after being hospitalised with pneumonia last month, according to his family.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 5 mins ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img2news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Ones To Watch: Piston</strong></h5>
+              <p class="card-text" style="color:black">The 54th band stepping into the limelight in our Ones To Watch feature are Midlands rock juggernauts Piston.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 1 day ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img3news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Kurt Cobain's medical gown from Nirvana's 1992 Reading Festival set up for auction</strong></h5>
+              <p class="card-text" style="color:black">The hospital gown Kurt Cobain wore for Nirvana’s fabled headline performance at Reading Festival in 1992 is going under the hammer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 1 week ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img4news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Foo Fighters announce support acts for 2019 UK and Ireland shows</strong></h5>
+              <p class="card-text" style="color:black">Foo Fighters have announced the support acts for their forthcoming UK and Ireland shows this summer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 2 weeks ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img5news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue"><strong>Pearl Jam's Eddie Vedder covers 'Maybe It's Time' from A Star Is Born</strong></h5>
+              <p class="card-text" style="color:black">Pearl Jam frontman Eddie Vedder has covered ‘Maybe It’s Time’ from the Bradley Cooper and Lady Gaga movie ‘A Star Is Born’.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 3 weeks ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img6news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Brad Pitt producing Chris Cornell documentary film</strong></h5>
+              <p class="card-text" style="color:black">Hollywood actor Brad Pitt is co-producing a new documentary film about late Soundgarden, Audioslave and Temple of the Dog singer Chris Cornell.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 5 mins ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img7news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Keith Richards to release 30th anniversary edition of debut solo album 'Talk Is Cheap'</strong></h5>
+              <p class="card-text" style="color:black">The Rolling Stones’ Keith Richards has announced a 30th anniversary reissue of his debut solo album ‘Talk Is Cheap’.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 1 day ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img8news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Metallica, Foo Fighters, Audioslave, Soundgarden & more rock Chris Cornell tribute concert.</strong></h5>
+              <p class="card-text" style="color:black">Metallica, Foo Fighters, Geezer Butler, Taylor Momsen and members of Audioslave, Soundgarden and Temple of the Dog all performed at the Chris Cornell tribute concert in Los Angeles last night (16th January).</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 1 week ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img9news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue "><strong>Toto's 'Africa' to play 'for all eternity' in African desert</strong></h5>
+              <p class="card-text" style="color:black">Toto’s ubiquitous soft-rock anthem ‘Africa’ is being played for ‘all eternity’ in the Namib Desert on the west coast of Africa.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 2 weeks ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'media/img10news.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color:MidnightBlue"><strong>Queen movie Bohemian Rhapsody wins big at Golden Globe Awards 2019</strong></h5>
+              <p class="card-text" style="color:black">Queen biopic Bohemian Rhapsody won two coveted gongs at the 76th Golden Globe Awards in Beverly Hills, California last night (6th January).</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted" style="color:black">Last updated 3 weeks ago</small>
+              <a href="#" class="btn btn-primary btn-sm">More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+          <div class="container">
+                    <h1><strong>Reviews</ strong></h1>
+                                  <!-- Card 2 -->
+                                  <div class="col-md-3 card-container">
+                                    <div class="card-flip">
+                                      <!-- Card Front -->
+                                      <div class="card front">
+                                        <img class="card-img-top" src="{% static 'media/damanek.jpeg' %}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h3 class="card-title" style="color:MidnightBlue "><strong>Danamek</strong></h3>
+                                          <h4 class="card-title" style="color:Blue "><strong>In Flight</strong></h4>
+                                        </div>
+
+                                        <div class="card-footer">
+                                          <small class="text-muted" style="color:black">Last updated 3 days ago</small>
+                                        </div>
+                                      </div>
+
+                                      <!-- Card Back -->
+                                      <div class="card back">
+                                        <div class="card-header" style="color:Blue">
+                                          Review
+                                        </div>
+                                        <div class="card-body">
+                                          <h4></h4>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star-half-empty checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <h4></h4>
+                                          <p style="color:MidnightBlue">Strong on melody, arrangements and musicianship, this is everything a good prog album should be, combining rock, jazz, orchestral, world music, funk and gospel influences.</p>
+                                        </div>
+                                        <!-- Social Icons -->
+                                        <!-- Add font awesome icons -->
+                                        <div class="card-footer">
+                                          <a href="#" class="fa fa-facebook" id="myfa"></a>
+                                          <a href="#" class="fa fa-twitter" id="myfa"></a>
+                                          <a href="#" class="fa fa-linkedin" id="myfa"></a>
+                                          <a href="#" class="fa fa-instagram" id="myfa"></a>
+                                          <a href="#" class="fa fa-pinterest" id="myfa"></a>
+                                        </div>
+                                      </div>
+                                      <!-- End Card Back -->
+                                    </div>
+                                  </div>
+                                  <!-- End Card 2 -->
+                                  <!-- Card 2 -->
+                                  <div class="col-md-3 card-container">
+                                    <div class="card-flip">
+                                      <!-- Card Front -->
+                                      <div class="card front">
+                                        <img class="card-img-top" src="{% static 'media/gleb.jpg' %}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h3 class="card-title" style="color:MidnightBlue "><strong>Gleb Kolyadin</strong></h3>
+                                          <h4 class="card-title" style="color:Blue "><strong>Gleb Kolyadin</strong></h4>
+                                        </div>
+
+                                        <div class="card-footer">
+                                          <small class="text-muted" style="color:black">Last updated 1 week ago</small>
+                                        </div>
+                                      </div>
+
+                                      <!-- Card Back -->
+                                      <div class="card back">
+                                        <div class="card-header" style="color:Blue">
+                                          Review
+                                        </div>
+                                        <div class="card-body">
+                                          <h4></h4>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star-half-empty checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <h4></h4>
+                                          <p style="color:MidnightBlue">The album is a wonderful mix of both dark, sometimes melancholy, yet joyful and fun music.</p>
+                                        </div>
+                                        <!-- Social Icons -->
+                                        <!-- Add font awesome icons -->
+                                        <div class="card-footer">
+                                          <a href="#" class="fa fa-facebook" id="myfa"></a>
+                                          <a href="#" class="fa fa-twitter" id="myfa"></a>
+                                          <a href="#" class="fa fa-linkedin" id="myfa"></a>
+                                          <a href="#" class="fa fa-instagram" id="myfa"></a>
+                                          <a href="#" class="fa fa-pinterest" id="myfa"></a>
+                                        </div>
+                                      </div>
+                                      <!-- End Card Back -->
+                                    </div>
+                                  </div>
+                                  <!-- End Card 2 -->
+                                  <!-- Card 2 -->
+                                  <div class="col-md-3 card-container">
+                                    <div class="card-flip">
+                                      <!-- Card Front -->
+                                      <div class="card front">
+                                        <img class="card-img-top" src="{% static 'media/noice-floor-cover-.png' %}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h3 class="card-title" style="color:MidnightBlue "><strong>Spock´s Beard</strong></h3>
+                                          <h4 class="card-title" style="color:Blue "><strong>Noise Floor</strong></h4>
+                                        </div>
+                                        <div class="card-footer">
+                                          <small class="text-muted" style="color:black">Last updated 2 weeks ago</small>
+                                        </div>
+                                      </div>
+
+                                      <!-- Card Back -->
+                                      <div class="card back">
+                                        <div class="card-header" style="color:Blue">
+                                          Review
+                                        </div>
+                                        <div class="card-body">
+                                          <h4></h4>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <h4></h4>
+                                          <p style="color:MidnightBlue">In the end, Noise Floor is another entertaining addition to the band's discography.</p>
+                                        </div>
+                                        <!-- Social Icons -->
+                                        <!-- Add font awesome icons -->
+                                        <div class="card-footer">
+                                          <a href="#" class="fa fa-facebook" id="myfa"></a>
+                                          <a href="#" class="fa fa-twitter" id="myfa"></a>
+                                          <a href="#" class="fa fa-linkedin" id="myfa"></a>
+                                          <a href="#" class="fa fa-instagram" id="myfa"></a>
+                                          <a href="#" class="fa fa-pinterest" id="myfa"></a>
+                                        </div>
+                                      </div>
+                                      <!-- End Card Back -->
+                                    </div>
+                                  </div>
+                                  <!-- End Card 2 -->
+                                  <!-- Card 2 -->
+                                  <div class="col-md-3 card-container">
+                                    <div class="card-flip">
+                                      <!-- Card Front -->
+                                      <div class="card front">
+                                        <img class="card-img-top" src="{% static 'media/riverside-wasteland.jpg' %}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h3 class="card-title" style="color:MidnightBlue"><strong>Riverside</strong></h3>
+                                          <h4 class="card-title" style="color:Blue"><strong>Wasteland</strong></h4>
+                                        </div>
+                                        <div class="card-footer">
+                                          <small class="text-muted" style="color:black">Last updated 3 weeks ago</small>
+                                        </div>
+                                      </div>
+
+                                      <!-- Card Back -->
+                                      <div class="card back">
+                                        <div class="card-header" style="color:Blue">
+                                          Review
+                                        </div>
+                                        <div class="card-body">
+                                          <h4></h4>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star-o checked"></span>
+                                          <h4></h4>
+                                          <p style="color:MidnightBlue">The intro frames the story well. Disoriented and knowing there’s no turning back from what happened, Duda creates atmosphere with an a cappella section.</p>
+                                        </div>
+                                        <!-- Social Icons -->
+                                        <!-- Add font awesome icons -->
+                                        <div class="card-footer">
+                                          <a href="#" class="fa fa-facebook" id="myfa"></a>
+                                          <a href="#" class="fa fa-twitter" id="myfa"></a>
+                                          <a href="#" class="fa fa-linkedin" id="myfa"></a>
+                                          <a href="#" class="fa fa-instagram" id="myfa"></a>
+                                          <a href="#" class="fa fa-pinterest" id="myfa"></a>
+                                        </div>
+                                      </div>
+                                      <!-- End Card Back -->
+                                    </div>
+                                  </div>
+                                  <!-- End Card 2 -->
+            </div>
+          </div>
+
+      <!-- START THE FEATURETTES -->
+      <div class="container" id="myfeaturettecontainer">
+        <div class="row featurette" id="featurette1">
+          <div class="col-md-8">
+            <h2 class="featurette-heading">Hard dance music in a way... <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Transported across the Atlantic from Miami's glamourous city centre, Ultra Europe wasted no time in establishing itself as a worthy successor to the original UMF. The biggest DJs in the world bring Croatia's stunning Adriatic coast to its feet.</p>
+          </div>
+          <div class="col-md-4">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" src="{% static 'media/img1.jpg' %}" alt="300x300" style="width: 300px; height: 300px;" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <div class="row featurette" id="featurette2">
+          <div class="col-md-8 push-md-4">
+            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Isle of Wight Festival is renowned for exclusive, legendary headliners – Fleetwood Mac, The Stone Roses, Bruce Springsteen – and eclectic lineups that pay homage to its own incredible history. Now 50 years on from the original edition, IOW is as strong as ever.</p>
+          </div>
+          <div class="col-md-4 pull-md-8">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" src="{% static 'media/img2.jpg' %}" alt="300x300" style="width: 300px; height: 300px;" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <div class="row featurette" id="featurette3">
+          <div class="col-md-8">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Tomorrowland is, simply put, the biggest electronic music show on earth. Massive lineups cherry-picked from any artist they could want, allied to an intense attention to detail, create an unrivalled wonderland that keeps on mesmerising the world.</p>
+          </div>
+          <div class="col-md-4">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" src="{% static 'media/img3.jpg' %}"  alt="300x300" data-holder-rendered="true" style="width: 300px; height: 300px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+
+{% endblock %}

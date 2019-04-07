@@ -1,0 +1,66 @@
+{% extends "groups/group_base.html" %}
+
+{% block pregroup %}
+
+  <div id="mygroupdetails"  class="card text-center" style="width: 30rem;">
+    <div class="card-body">
+      <h2 class="card-title">{{group.name}}</h2>
+      <p class="card-text">Member(s): {{group.members.count}}</p>
+      <h1></h1>
+      {% if user in group.members.all %}
+        <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-md btn-fill btn-warning'>
+          <span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
+      {% else %}
+        <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-md btn-fill btn-warning'>
+          <span class="glyphicon glyphicon-ok-circle"></span>Join</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block group_content %}
+  <div class="container">
+      {% if group.posts.count == 0 %}
+         <h2>No posts</h2>
+      {% else %}
+        {% for post in group.posts.all %}
+          {% include "posts/_post.html" with hide_group=True %}
+        {% endfor %}
+      {% endif %}
+  </div>
+
+
+  		{% if is_paginated %}
+  			<nav>
+  				<ul class="pagination">
+  					{% if page_obj.has_previous %}
+  						<li><a href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+  					{% else %}
+  						<li class="disabled"><a href="#"><span>Previous</span></a></li>
+  					{% endif %}
+
+  					{% for page in paginator.page_range %}
+  						<li {% if page == page_obj.number %}class="active"{% endif %}>
+  							<a href="?page={{ page }}">{{ page }}</a>
+  						</li>
+  					{% endfor %}
+
+  					{% if page_obj.has_next %}
+  						<li>
+  							<a href="?page={{ page_obj.next_page_number }}">
+  								<span>Next</span>
+  							</a>
+  						</li>
+  					{% else %}
+  						<li {% if not page_obj.has_next %}class="disabled"{% endif %}>
+  							<a href="#">
+  								<span>Next</span>
+  							</a>
+  						</li>
+  					{% endif %}
+  				</ul>
+  			</nav>
+  		{% endif %}
+
+{% endblock %}
