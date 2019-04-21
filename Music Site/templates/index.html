@@ -2,6 +2,11 @@
 {% load staticfiles %}
 {% block content %}
 
+
+    <p class="item-1">Get your tickets for DEUS NOW !!! Buy the tickets now for 30% dicsount</p>
+    <p class="item-2">The Supergroup, Prophets Of Rage will flight straight to Greece on August</p>
+    <p class="item-3">Alice in Chains eventually will come to Greece in Release Festival !!!</p>
+
     <div class="carousel slide bg-inverse w-75 ml-auto mr-auto" data-ride="carousel" id="myCarousel">
 
 
@@ -112,7 +117,11 @@
       <!-- Review of albums -->
 
       <div class="container" id="card_album">
-        <h1><strong>Rock News</strong></h1>
+
+        <div class="slide-left">
+          <h1><strong>Rock News</ strong></h1>
+        </div>
+
         <div class="card-deck">
           <div class="card">
             <img class="card-img-top" src="{% static 'media/img1news.jpg' %}" alt="Card image cap">
@@ -231,10 +240,11 @@
 
       </div>
 
+          <div class="container" id="reviews">
 
-
-          <div class="container">
-                    <h1><strong>Reviews</ strong></h1>
+            <div class="slide-left">
+              <h1><strong>Reviews</ strong></h1>
+            </div>
                                   <!-- Card 2 -->
                                   <div class="col-md-3 card-container">
                                     <div class="card-flip">
@@ -414,11 +424,21 @@
                                   </div>
                                   <!-- End Card 2 -->
             </div>
-          </div>
 
       <!-- START THE FEATURETTES -->
+
+
+
       <div class="container" id="myfeaturettecontainer">
+
         <div class="row featurette" id="featurette1">
+
+          <div class="slide-left">
+            <h1><strong>Gigs</ strong></h1>
+          </div>
+
+
+
           <div class="col-md-8">
             <h2 class="featurette-heading">Hard dance music in a way... <span class="text-muted">It'll blow your mind.</span></h2>
             <p class="lead">Transported across the Atlantic from Miami's glamourous city centre, Ultra Europe wasted no time in establishing itself as a worthy successor to the original UMF. The biggest DJs in the world bring Croatia's stunning Adriatic coast to its feet.</p>
@@ -447,7 +467,9 @@
             <img class="featurette-image img-fluid mx-auto" data-src="holder.js/300x300/auto" src="{% static 'media/img3.jpg' %}"  alt="300x300" data-holder-rendered="true" style="width: 300px; height: 300px;">
           </div>
         </div>
+
       </div>
+
 
       <!-- /END THE FEATURETTES -->
 

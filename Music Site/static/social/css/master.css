@@ -5,11 +5,26 @@ html{
 
 body{
   margin: 0;
+  background-image: url("/static/media/Music-site2.png"); /* The image used */
+  background-repeat: repeat;
   background-color: #000C12;
   color: white;
   padding-top: 20px;
 }
 
+.grad1{
+  background-image: url("/static/media/Music-site.png"); /* The image used */
+  background-color: #000C12; /* Used if the image is unavailable */
+  background-repeat: repeat;
+
+}
+
+.grad2{
+  background-image: url("/static/media/Music-site2.png"); /* The image used */
+  background-color: #000C12; /* Used if the image is unavailable */
+  background-repeat: repeat;
+
+}
 
 .carousel-indicators-numbers li{
       text-indent: 0;
@@ -137,7 +152,10 @@ body{
 
 #mynav{
   font-family: 'Righteous', cursive;
+  background-image: url("/static/media/Music-site.png"); /* The image used */
   background-color: brown;
+  background-repeat: repeat;
+  background-position: left top;
 }
 
 #mynavbar-brand{
@@ -165,7 +183,7 @@ body{
 
 .navbar-nav > li > .dropdown-menu
 {
-  background-color: brown;
+  background-color: #595146;
 }
 
 .navbar-nav > li > .dropdown-menu a
@@ -176,8 +194,79 @@ body{
 .navbar-nav > li > .dropdown-menu a:hover
 {
   color: white;
-  background-color: #A50A2A;
+  background-color: #84581b;
 }
+
+
+
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+
+div.slide-left h1 {
+  animation: slide-left 3s;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 30%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+.item-1,
+.item-2,
+.item-3 {
+	position: absolute;
+  display: block;
+
+  width: 60%;
+
+  font-size: 20px;
+
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
 
 #search_results{
   background-color: #07162b;
